@@ -10,8 +10,13 @@ class Director
         
         while (keepPlaying)
         {
-            
+            showJumper();
         }
     }
-  
+    
+    public void showJumper()
+    {
+        Jumpeer jumper = new Jumpeer();
+        jumper.createJumper();
+    }
 }
