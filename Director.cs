@@ -19,13 +19,7 @@ class Director
   
 
     public void GetInputs()
-    {      
-        Console.WriteLine(Jumper);
-
-        Console.ReadKey("Guess a letter [A-Z]");
-
-        String list = new list();
-        
+    {   
 
     }
     
