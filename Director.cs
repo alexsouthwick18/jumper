@@ -11,6 +11,8 @@ class Director
         while (keepPlaying)
         {
             showJumper();
+            getInput();
+            gameOver();
         }
     }
     
@@ -19,4 +21,11 @@ class Director
         Jumpeer jumper = new Jumpeer();
         jumper.createJumper();
     }
+    public void getInput(){
+        Console.WriteLine("Guess a letter (a-z): ");
+    }
+    public void gameOver(){
+        keepPlaying = false;
+    }
+
 }
