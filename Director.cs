@@ -20,7 +20,9 @@ class Director
 
     public void GetInputs()
     {   
-
+        Console.WriteLine("Guess a letter [A-Z]: ");
+        Console.ReadKey();
+        
     }
     
     public void DoUpdates()
