@@ -1,3 +1,5 @@
+using System;
+
 class Director
 { 
  
@@ -17,7 +19,13 @@ class Director
   
 
     public void GetInputs()
-    {   
+    {      
+        Console.WriteLine(Jumper);
+
+        Console.ReadKey("Guess a letter [A-Z]");
+
+        String list = new list();
+        
 
     }
     
@@ -32,4 +40,3 @@ class Director
         
     }
 }
->>>>>>> 52af7814c8da22c71485e58129dbb1a437066f43
