@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+
 
 namespace Jumper
 {
@@ -10,7 +12,13 @@ namespace Jumper
 
             List<string> wordsList = new List<string>(listWords);
             return wordsList;
-
+            
+        }
+        public void GetWord()
+        {
+            var random = new Random();
+            int index = random.Next(wordslist.Count);
+            Console.WriteLine(wordslist[index]);
         }
     }
 }
