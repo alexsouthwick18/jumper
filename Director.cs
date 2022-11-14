@@ -20,12 +20,17 @@ class Director
     
     public void gameDisplay()
     {
-        Jumpeer jumper = new Jumpeer();
-        jumper.createJumper(attempts);
-        /// get the word from the list and assign it to the goblal variable wordToGuess
+         /// get the word from the list and assign it to the goblal variable wordToGuess
         chosenWordList listy = new chosenWordList();
         wordToGuess = listy.GetWord();
-        Console.WriteLine(wordToGuess);
+        Console.WriteLine($"word to guess: {wordToGuess}");
+        ///hide the characters of the word and print it
+        listy.HideWord(wordToGuess);
+
+        /// shows the jumper
+        Jumpeer jumper = new Jumpeer();
+        jumper.createJumper(attempts);
+       
     }
     public void getInput(){
         Console.WriteLine("Guess a letter (a-z): ");
