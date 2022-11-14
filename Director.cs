@@ -4,6 +4,7 @@ class Director
 { 
  
     bool keepPlaying = true;
+    int attempts = 4;
     public void StartGame()
     {
         
@@ -19,7 +20,7 @@ class Director
     public void showJumper()
     {
         Jumpeer jumper = new Jumpeer();
-        jumper.createJumper();
+        jumper.createJumper(attempts);
     }
     public void getInput(){
         Console.WriteLine("Guess a letter (a-z): ");
