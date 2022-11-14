@@ -1,10 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-
-namespace Jumper
-{
-    class chosenWordList
+class chosenWordList
     {
         
         private string[] listWords = { "apple", "mouse", "index", "dozen", "union" };
@@ -15,13 +12,15 @@ namespace Jumper
 
             
         }
-        public void GetWord()
+        public string GetWord()
         {
             List<string> listy = getWordList();
             var random = new Random();
             int index = random.Next(listy.Count);
-            Console.WriteLine(listy[index]);
+            string wordChosen = listy[index];
+            Console.WriteLine(wordChosen);
+            return wordChosen;
         }
     }
-}
+
 
