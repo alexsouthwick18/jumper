@@ -7,6 +7,7 @@ class Director
     string wordToGuess = "";
     bool keepPlaying = true;
     int attempts = 4;
+    
     public void StartGame()
     {
         
@@ -34,7 +35,12 @@ class Director
        
     }
     public void getInput(){
+        Word word = new Word();
+
         Console.WriteLine("Guess a letter (a-z): ");
+        string playerguess = Console.ReadLine();
+        word.CompareToGuess(playerguess);
+        
     }
     public void gameOver(){
         keepPlaying = false;

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 class chosenWordList
     {
         
-        private string[] listWords = { "rat", "mouse", "desk", "banana", "crocodile" };
+        private string[] listWords = { "rat", "mouse", "desk", "banana", "crocodile"};
         public List<string> getWordList(){
 
             List<string> wordsList = new List<string>(listWords);

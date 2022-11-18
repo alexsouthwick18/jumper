@@ -1,7 +1,5 @@
 using System;
 
-namespace Jumper
-{
     public class Word
     {
        private string secretWord; 
@@ -16,15 +14,15 @@ namespace Jumper
 
         public void CompareToGuess(string w)
         {  
-            string hint = "_";
-            int attempts = 4;  
+            // string hint = "_";
+            // int attempts = 4;  
 
-            while(attempts > 0)
-            {
-                if('Z'.CompareTo('Z') == 0)
-                    Console.WriteLine("Same character !");
-                if (guess == secretWord)
-            }
+            // while(attempts > 0)
+            // {
+            //     if('Z'.CompareTo('Z') == 0)
+            //         Console.WriteLine("Same character !");
+            //     if (guess == secretWord)
+            // }
         }
         public string GetHint()
         {
@@ -36,4 +34,3 @@ namespace Jumper
         }
     }
 
-}
