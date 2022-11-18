@@ -59,6 +59,9 @@ class Director
         jumper.createJumper(attempts);
     }
     public void gameOver(){
+        Console.WriteLine();
+        Console.WriteLine($"Game Over :'( ");
+        Console.WriteLine();
         keepPlaying = false;
     }
 
