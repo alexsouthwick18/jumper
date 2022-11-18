@@ -36,12 +36,19 @@ class Director
     }
     public void getInput(){
         Word word = new Word();
-
-        // while Attempt 
-
+        bool HasGuessed = false;
+    
+        while (attempts <= 0)
+        {
+            
         Console.WriteLine("Guess a letter (a-z): ");
         string playerguess = Console.ReadLine();
-        word.CompareToGuess(playerguess, wordToGuess);
+        HasGuessed = word.CompareToGuess(playerguess, wordToGuess);
+        }
+        if (HasGuessed != true)
+        {
+            attempts--;
+        }
         
     }
     public void gameOver(){

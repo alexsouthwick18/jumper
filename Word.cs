@@ -14,11 +14,12 @@ public class Word
 
 
 
-    public void CompareToGuess(string userGuess, string wordToGuess)
+    public bool CompareToGuess(string userGuess, string wordToGuess)
     {
         secretWord = wordToGuess;
         // string[] hint = null;
 
+        bool hasGuessed = false;
         
         // string[] splitword = wordToGuess.Split();
         // Console.Write(wordToGuess.Split());
@@ -27,12 +28,14 @@ public class Word
         {
           if (secretWord[i]==Convert.ToChar(userGuess)){
                 Console.Write($"{secretWord[i]}");
+                hasGuessed = true;
           }
           else{
             Console.Write("_");
           }
+          
         }
-
+            return hasGuessed;
 
     }
     public string GetHint()
