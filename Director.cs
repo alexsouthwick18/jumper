@@ -14,42 +14,49 @@ class Director
         
         while (keepPlaying)
         {
-            gameDisplay();
-            getInput();
+            GameStart();
+            while (attempts > 0)
+            {   
+                getInput();
+            }
+           
             gameOver();
         }
     }
     
-    public void gameDisplay()
+
+    public void GameStart()
     {
-         /// get the word from the list and assign it to the goblal variable wordToGuess
         chosenWordList listy = new chosenWordList();
         wordToGuess = listy.GetWord();
         Console.WriteLine($"word to guess: {wordToGuess}");
-        ///hide the characters of the word and print it
         listy.HideWord(wordToGuess);
-
-        /// shows the jumper
-        Jumpeer jumper = new Jumpeer();
-        jumper.createJumper(attempts);
+        Console.WriteLine();
+        BuildJummper(attempts);
        
     }
     public void getInput(){
         Word word = new Word();
         bool HasGuessed = false;
-    
-        while (attempts <= 0)
-        {
-            
-        Console.WriteLine("Guess a letter (a-z): ");
-        string playerguess = Console.ReadLine();
+        string playerguess = "" ;
+         
+        Console.Write($"Guess a letter (a-z): ");
+        playerguess = Console.ReadLine();
         HasGuessed = word.CompareToGuess(playerguess, wordToGuess);
-        }
+        
         if (HasGuessed != true)
         {
             attempts--;
         }
-        
+        Console.WriteLine();
+        Console.WriteLine();
+        BuildJummper(attempts);
+    }
+    private void BuildJummper(int attempts)
+    {
+        /// shows the jumper
+        Jumpeer jumper = new Jumpeer();
+        jumper.createJumper(attempts);
     }
     public void gameOver(){
         keepPlaying = false;

@@ -3,7 +3,7 @@ using System;
 public class Word
 {
     private string secretWord;
-    private string hint;
+    // private string hint;
 
     public string _word()
     {
@@ -27,24 +27,24 @@ public class Word
         for (int i = 0; i < secretWord.Length; i++)
         {
           if (secretWord[i]==Convert.ToChar(userGuess)){
-                Console.Write($"{secretWord[i]}");
+                Console.Write($"{secretWord[i]} ");
                 hasGuessed = true;
           }
           else{
-            Console.Write("_");
+            Console.Write($"_ ");
           }
           
         }
             return hasGuessed;
 
     }
-    public string GetHint()
-    {
-        return hint;
-    }
-    public bool Guessed()
-    {
-        return (hint == secretWord);
-    }
+    // public string GetHint()
+    // {
+    //     return hint;
+    // }
+    // public bool Guessed()
+    // {
+    //     return (hint == secretWord);
+    // }
 }
 
