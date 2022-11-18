@@ -1,7 +1,7 @@
-using System;
 using System.Collections.Generic;
 using static System.Random;
 using System.Text;
+using System;
 public class GetInputs
 {
 
@@ -20,7 +20,7 @@ public class GetInputs
         }
     }
 
-    public static int printWord(list<char>guessedLetters, string randomWord)
+    public static void printWord(List<char>guessedLetters, string randomWord)
     {
         // int counter = 0;
         int rightLetters = 0;
