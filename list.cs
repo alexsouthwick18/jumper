@@ -17,6 +17,7 @@ class chosenWordList
             List<string> listy = getWordList();
             var random = new Random();
             int index = random.Next(listy.Count);
+            
             string wordChosen = listy[index];
             // Console.WriteLine(wordChosen);
             return wordChosen;

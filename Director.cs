@@ -37,9 +37,11 @@ class Director
     public void getInput(){
         Word word = new Word();
 
+        // while Attempt 
+
         Console.WriteLine("Guess a letter (a-z): ");
         string playerguess = Console.ReadLine();
-        word.CompareToGuess(playerguess);
+        word.CompareToGuess(playerguess, wordToGuess);
         
     }
     public void gameOver(){
