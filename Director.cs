@@ -29,7 +29,7 @@ class Director
     }
     
 
-    public void GameStart()
+    private void GameStart()
     {
 
         wordToGuess = listy.GetWord();
@@ -40,7 +40,7 @@ class Director
         jumper.createJumper(attempts);
        
     }
-    public void getInput()
+    private void getInput()
     {
         
         bool HasGuessed = false;
@@ -65,7 +65,7 @@ class Director
         }
 
     }
-    public void gameOver(){
+    private void gameOver(){
 
         if(this._HasWin)
         {
