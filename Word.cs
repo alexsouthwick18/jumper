@@ -1,50 +1,48 @@
 using System;
-
+using System.Collections.Generic;
 public class Word
 {
-    private string secretWord;
-    // private string hint;
+    private List<string> wordToGuess = new List<string>(); // crocodile
+    private List<string> hint = new List<string>();       // _________
 
-    public string _word()
+    public Word(string secretWord)
     {
-
-
-        return secretWord;
+      for(int j =0;j< secretWord.Length ; j++)
+        {
+            this.wordToGuess.Add(secretWord[j].ToString());
+            hint.Add("_");
+        }
     }
 
-
-
-    public bool CompareToGuess(string userGuess, string wordToGuess)
+    public bool CompareToGuess(string userGuess)
     {
-        secretWord = wordToGuess;
-        // string[] hint = null;
+        // char empty = '_';
 
         bool hasGuessed = false;
-        
-        // string[] splitword = wordToGuess.Split();
-        // Console.Write(wordToGuess.Split());
-        // Console.Write(secretWord.Length);
-        for (int i = 0; i < secretWord.Length; i++)
+
+        for (int i = 0; i < wordToGuess.Count; i++)
         {
-          if (secretWord[i]==Convert.ToChar(userGuess)){
-                Console.Write($"{secretWord[i]} ");
+          if (wordToGuess[i]==userGuess){
+                 hint[i] = userGuess ;
                 hasGuessed = true;
           }
-          else{
-            Console.Write($"_ ");
-          }
+          // }
+          // else{
+          //   Console.Write($"_ ");
+          //   //charList.Insert(i,empty);
+          //   charList[i] = empty;
+          // }
           
         }
-            return hasGuessed;
+        for(int j =0;j< hint.Count ; j++)
+        {
+            Console.Write(hint[j]);
+        }
+            
+        return hasGuessed;
 
     }
-    // public string GetHint()
-    // {
-    //     return hint;
-    // }
-    // public bool Guessed()
-    // {
-    //     return (hint == secretWord);
-    // }
+
+   
 }
 

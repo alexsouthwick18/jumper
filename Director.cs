@@ -3,10 +3,12 @@ using System.Collections.Generic;
 
 class Director
 { 
-    
+    List<char> charsGuessed = new List<char>();
     string wordToGuess = "";
     bool keepPlaying = true;
     int attempts = 4;
+    Word word = null;
+        
     
     public void StartGame()
     {
@@ -29,6 +31,8 @@ class Director
     {
         chosenWordList listy = new chosenWordList();
         wordToGuess = listy.GetWord();
+        word = new Word(wordToGuess);
+
         Console.WriteLine($"word to guess: {wordToGuess}");
         listy.HideWord(wordToGuess);
         Console.WriteLine();
@@ -36,21 +40,25 @@ class Director
        
     }
     public void getInput(){
-        Word word = new Word();
         bool HasGuessed = false;
         string playerguess = "" ;
          
         Console.Write($"Guess a letter (a-z): ");
         playerguess = Console.ReadLine();
-        HasGuessed = word.CompareToGuess(playerguess, wordToGuess);
-        
-        if (HasGuessed != true)
+        if(playerguess.Length==1)
         {
-            attempts--;
+            HasGuessed = word.CompareToGuess(playerguess);
+        
+            if (HasGuessed != true)
+            {
+                attempts--;
+            }
+
+            Console.WriteLine();
+            Console.WriteLine();
+            BuildJummper(attempts);
+
         }
-        Console.WriteLine();
-        Console.WriteLine();
-        BuildJummper(attempts);
     }
     private void BuildJummper(int attempts)
     {
