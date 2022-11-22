@@ -1,7 +1,9 @@
-# jumper
-Game where user have some attemps to guess the secret word, every fail cuts part of the parchute, the game ends wether the word is guessed or the parachute is completely destroid .
+# Jumper
+Game where user have some attemps to guess the secret word, every fail cuts part of the parchute, the game ends wether the word is guessed or the parachute is completely destroid.
+
 ---
-## Required software: VCS Code (to run the program)
+## Required software
+VCS Code (to run the program)
 
 ## Project Structure
 ```
@@ -20,5 +22,6 @@ root
 * Brendan Willis (brendanwillis@me.com) 
 * Nimrod Huaira Reyna (hua16003@byui.edu)
 * Alex Southwick (alexsouthwick18@byui.edu)
+* Game where user have some attemps to guess the secret word, every fail cuts part of the parchute, the game ends wether the word is guessed or the parachute is completely destroid.
 
 
