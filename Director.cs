@@ -3,11 +3,13 @@ using System.Collections.Generic;
 
 class Director
 { 
-    List<char> charsGuessed = new List<char>();
-    string wordToGuess = "";
+    private bool _HasWin = false;
+    private string wordToGuess = "";
     bool keepPlaying = true;
     int attempts = 4;
     Word word = null;
+    Jumpeer jumper = new Jumpeer();
+    Listy listy = new Listy();
         
     
     public void StartGame()
@@ -29,17 +31,18 @@ class Director
 
     public void GameStart()
     {
-        chosenWordList listy = new chosenWordList();
+
         wordToGuess = listy.GetWord();
         word = new Word(wordToGuess);
 
         Console.WriteLine($"word to guess: {wordToGuess}");
-        listy.HideWord(wordToGuess);
-        Console.WriteLine();
-        BuildJummper(attempts);
+        word.showHint(); // - - - - - -
+        jumper.createJumper(attempts);
        
     }
-    public void getInput(){
+    public void getInput()
+    {
+        
         bool HasGuessed = false;
         string playerguess = "" ;
          
@@ -48,28 +51,30 @@ class Director
         if(playerguess.Length==1)
         {
             HasGuessed = word.CompareToGuess(playerguess);
-        
             if (HasGuessed != true)
-            {
-                attempts--;
-            }
-
-            Console.WriteLine();
-            Console.WriteLine();
-            BuildJummper(attempts);
-
+                {
+                    attempts--;
+                }
+            jumper.createJumper(attempts);
         }
-    }
-    private void BuildJummper(int attempts)
-    {
-        /// shows the jumper
-        Jumpeer jumper = new Jumpeer();
-        jumper.createJumper(attempts);
+
+        this._HasWin = word.HasWin();
+        if(this._HasWin)
+        {
+            attempts = 0;
+        }
+
     }
     public void gameOver(){
-        Console.WriteLine();
-        Console.WriteLine($"Game Over :'( ");
-        Console.WriteLine();
+
+        if(this._HasWin)
+        {
+            Console.WriteLine($"\nYou guessed the word!!! :D \n");
+        }
+        else{
+            Console.WriteLine($"\nGame Over :'( \n");
+            
+        }
         keepPlaying = false;
     }
 
